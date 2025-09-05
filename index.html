@@ -4,26 +4,23 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>sgdledwall — LED Wall Rentals</title>
-<meta name="description" content="Professional LED wall rentals for weddings, festivals, concerts and corporate events. Quick setup, live feed, and on-site operators." />
+<meta name="description" content="LED wall rentals for weddings, festivals, concerts and corporate events. Clean setups with live feed and on-site operators." />
 <meta name="theme-color" content="#0b0f14" />
 
 <style>
-  /* ===== Design Tokens (Dark Theme) ===== */
+  /* ---------- Design Tokens (Dark Minimal) ---------- */
   :root{
-    --bg:#0b0f14;        /* page background */
-    --bg2:#0e141b;       /* section background */
-    --card:#0f151c;      /* card surface */
-    --ink:#e6edf3;       /* main text */
-    --muted:#9aa9b8;     /* secondary text */
-    --line:#162231;      /* borders */
-    --accent:#00c2ff;    /* primary accent (sky) */
-    --accent-2:#22d3ee;  /* secondary accent (cyan) */
-    --radius:14px;
-    --max:1080px;
-    --shadow:0 20px 60px rgba(0,0,0,.35);
+    --bg:#0b0f14;      /* page background */
+    --surface:#0f141a; /* section surface */
+    --ink:#e8edf4;     /* main text */
+    --muted:#9fb0c3;   /* secondary */
+    --line:#1a2532;    /* hairline separators */
+    --chip:#0d141b;    /* pill bg */
+    --accent:#00b6ff;  /* primary */
+    --radius:12px;
+    --max:1024px;
+    --space:20px;      /* base spacing */
   }
-
-  /* ===== Base ===== */
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -31,136 +28,121 @@
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1000px 700px at 80% -20%, rgba(0,194,255,.08), transparent 60%),
-      radial-gradient(900px 650px at -10% 110%, rgba(34,211,238,.06), transparent 60%),
+      radial-gradient(900px 600px at 85% -10%, rgba(0,182,255,.07), transparent 60%),
+      radial-gradient(800px 600px at -10% 110%, rgba(0,182,255,.05), transparent 60%),
       var(--bg);
-    line-height:1.6;
+    line-height:1.65;
+    letter-spacing:.1px;
   }
-  img{max-width:100%;display:block}
-
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--space)}
+  .divider{height:1px;background:var(--line); margin:var(--space) 0}
 
-  /* ===== Header ===== */
+  /* ---------- Header (slim, sticky) ---------- */
   header{
     position:sticky; top:0; z-index:50;
-    backdrop-filter:saturate(1.2) blur(10px);
-    background:color-mix(in hsl, var(--bg) 80%, transparent);
+    backdrop-filter:saturate(1.1) blur(8px);
+    background:color-mix(in hsl, var(--bg) 82%, transparent);
     border-bottom:1px solid var(--line);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{
-    width:42px;height:42px;border-radius:10px;object-fit:contain;background:#0a0f15;border:1px solid #122131;
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 0; gap:12px;
   }
-  .title{font-weight:800;letter-spacing:.3px}
-  .sub{color:var(--muted);font-size:12px;margin-top:2px}
-  .menu{display:flex;gap:16px;flex-wrap:wrap}
-  .menu a{color:var(--muted);font-size:14px}
+  .brand{display:flex; align-items:center; gap:10px}
+  .logo{width:36px;height:36px;border-radius:10px;object-fit:contain;background:#0a1015;border:1px solid #142231}
+  .title{font-weight:800; letter-spacing:.3px}
+  .sub{color:var(--muted); font-size:12px}
+  .menu{display:flex; gap:16px; flex-wrap:wrap}
+  .menu a{color:var(--muted); font-size:14px}
   .menu a:hover{color:var(--ink)}
-  .cta{display:flex;gap:10px;flex-wrap:wrap}
+  .cta{display:flex; gap:8px; flex-wrap:wrap}
 
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:10px 14px;border-radius:999px;border:1px solid #1a2a3a;
-    color:var(--ink); background:#0b1219; box-shadow:var(--shadow);
-    transition:transform .08s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
-    font-weight:700;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:10px 14px; border-radius:999px; border:1px solid var(--line);
+    background:transparent; color:var(--ink); font-weight:700;
+    transition:background .15s ease, border-color .15s ease, transform .06s ease;
   }
-  .btn:hover{border-color:#24405b; background:#0d1622}
+  .btn:hover{background:#0d141b; border-color:#223246}
   .btn:active{transform:translateY(1px)}
-  .btn.primary{
-    background:linear-gradient(180deg, color-mix(in hsl, var(--accent) 90%, #fff 0%) 0%, var(--accent) 100%);
-    color:#001018; border-color:transparent;
-  }
-  .btn.primary:hover{box-shadow:0 10px 24px rgba(0,194,255,.25)}
-  .btn.outline{
-    background:transparent; border-color:#24405b;
+  .btn.primary{background:var(--accent); color:#001019; border-color:transparent}
+  .btn.primary:hover{filter:brightness(1.05)}
+
+  /* ---------- Sections ---------- */
+  section{padding:28px 0}
+  .hero{padding:34px 0}
+  h1{font-size:clamp(28px, 5vw, 44px); line-height:1.12; margin:10px 0 8px; font-weight:900}
+  .lead{color:var(--muted); max-width:760px; margin:0}
+  .row{display:grid; gap:14px}
+  @media (min-width:840px){
+    .row.cols-2{grid-template-columns:1fr 1fr}
+    .row.cols-3{grid-template-columns:repeat(3,1fr)}
   }
 
-  /* ===== Sections ===== */
-  section{padding:28px 0; border-bottom:1px solid var(--line)}
-  section:last-of-type{border-bottom:none}
+  /* compact KPI pills */
+  .kpis{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+  .pill{padding:10px 12px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#c3d2e2; font-weight:600; font-size:14px}
 
-  .hero{
-    display:grid; gap:14px; padding:28px 0;
-  }
-  .h1{
-    font-size:clamp(28px, 5vw, 44px); line-height:1.12;
-    margin:6px 0 6px; font-weight:900; letter-spacing:.2px;
-  }
-  .lead{color:var(--muted); max-width:820px; margin:0}
-  .kpis{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:10px}
-  @media (min-width:720px){ .kpis{grid-template-columns:repeat(4,1fr)} }
-  .k{
-    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; text-align:center;
-  }
-  .k b{font-weight:800}
-
-  .grid{display:grid; gap:14px}
-  @media (min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
-
+  /* simple cards (very light chrome) */
   .card{
-    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:16px; box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px;
   }
-  .chip{
-    border:1px solid var(--line); border-radius:999px; padding:8px 12px; color:#b6c8d8; background:#0b1219; font-size:14px;
-  }
+  .list{margin:6px 0 0 18px; color:var(--muted)}
   .muted{color:var(--muted)}
-  .mini{font-size:12px;color:var(--muted)}
+  .h6{font-size:13px; color:#b5c3d3; text-transform:uppercase; letter-spacing:.12em; font-weight:800; margin-bottom:8px}
 
-  /* ===== Gallery ===== */
-  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  /* Gallery */
+  .gallery{display:grid; gap:10px; grid-template-columns:repeat(2,1fr)}
   @media (min-width:700px){ .gallery{grid-template-columns:repeat(4,1fr)} }
-  .g{aspect-ratio:4/3;border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative;background:#0a1118}
-  .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-  .g:hover img{transform:scale(1.03)}
+  .g{aspect-ratio:4/3; border-radius:12px; overflow:hidden; background:#0b1218; border:1px solid var(--line)}
+  .g img{width:100%;height:100%;object-fit:cover; transition:transform .35s ease}
+  .g:hover img{transform:scale(1.02)}
 
-  /* ===== Form ===== */
-  label{display:block;font-size:13px;color:#b3c0cf;margin:0 0 6px}
-  input,select,textarea{
-    width:100%;padding:10px 12px;border:1px solid #1a2a3a;border-radius:12px;background:#0a1219;color:var(--ink);outline:none;
+  /* Form */
+  label{display:block; font-size:13px; color:#b7c4d3; margin:0 0 6px}
+  input, select, textarea{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid #1a2a3a; background:#0a1218; color:var(--ink); outline:none;
   }
-  input:focus,select:focus,textarea:focus{border-color:#2a4968; box-shadow:0 0 0 3px rgba(0,194,255,.15)}
-  .row{display:grid; gap:12px}
-  @media (min-width:720px){ .row.cols-2{grid-template-columns:repeat(2,1fr)} }
+  input:focus, select:focus, textarea:focus{border-color:#2b4662; box-shadow:0 0 0 3px rgba(0,182,255,.15)}
+  .note{font-size:12px; color:var(--muted)}
 
-  /* ===== Footer ===== */
-  footer{padding:22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  /* Footer */
+  footer{border-top:1px solid var(--line); padding:22px 0; color:var(--muted); font-size:14px}
 
-  /* ===== Animations (respect reduced motion) ===== */
+  /* Reveal (gentle; disabled if reduced-motion) */
   @media (prefers-reduced-motion:no-preference){
-    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+    .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
     .reveal.show{opacity:1; transform:none}
-    .fade-in{animation:fade .6s ease both}
-    @keyframes fade{from{opacity:0} to{opacity:1}}
   }
 </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="fade-in">
+  <header>
     <div class="wrap nav">
       <div class="brand">
         <img class="logo" alt="sgdledwall logo" src="https://i.postimg.cc/N01HwxTw/image.png"
              onerror="this.style.display='none';document.getElementById('fallbackBrand').style.display='inline-flex'">
         <div>
-          <div class="title" style="display:flex;align-items:center;gap:8px">
-            <span id="fallbackBrand" style="display:none" class="chip">sgdledwall</span>
-            <span style="font-weight:800">sgdledwall</span>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span id="fallbackBrand" style="display:none" class="pill">sgdledwall</span>
+            <span class="title">sgdledwall</span>
           </div>
           <div class="sub">LED Wall Rentals • Weddings • Festivals • Corporate</div>
         </div>
       </div>
+
       <nav class="menu">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
+
       <div class="cta">
         <a class="btn primary" href="tel:+917888218884">Call</a>
-        <a class="btn outline" href="https://wa.me/917888218884?text=Hi%20sgdledwall,%20need%20an%20LED%20wall.">WhatsApp</a>
+        <a class="btn" href="https://wa.me/917888218884?text=Hi%20sgdledwall,%20need%20an%20LED%20wall.">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -168,76 +150,83 @@
   <main>
     <!-- Hero -->
     <section class="wrap hero reveal">
-      <h1 class="h1">Clean, reliable LED screens for every event.</h1>
-      <p class="lead">Crisp visuals, safe rigging, fast setup and on-site operators. Perfect for weddings, festivals, concerts and corporate shows.</p>
+      <h1>Clean, reliable LED screens for every event.</h1>
+      <p class="lead">Crisp visuals, safe rigging and on-time setup with on-site operators — perfect for weddings, festivals, concerts & corporate shows.</p>
 
       <div class="kpis">
-        <div class="k"><b>Indoor / Outdoor</b><div class="mini">Stage backdrops</div></div>
-        <div class="k"><b>Live Feed</b><div class="mini">Cameras & switchers</div></div>
-        <div class="k"><b>Fast Setup</b><div class="mini">Truss & cabling</div></div>
-        <div class="k"><b>Operator</b><div class="mini">End-to-end support</div></div>
+        <span class="pill">Indoor / Outdoor</span>
+        <span class="pill">Live Feed</span>
+        <span class="pill">Fast Setup</span>
+        <span class="pill">Pro Operator</span>
       </div>
     </section>
 
+    <div class="wrap"><div class="divider"></div></div>
+
     <!-- Services -->
     <section id="services" class="wrap reveal">
-      <div class="grid cols-3">
+      <div class="row cols-3">
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Weddings & Social</div>
-          <div class="muted">Reception stage LED, photo reels, entries and live camera feed.</div>
+          <div class="h6">Weddings & Social</div>
+          <div class="muted">Reception stage LED, photo reels, entries and live camera.</div>
         </div>
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Festivals & Concerts</div>
-          <div class="muted">Main & side screens, countdowns, sponsor loops and motion graphics.</div>
+          <div class="h6">Festivals & Concerts</div>
+          <div class="muted">Main & side screens, sponsor loops, countdowns, motion graphics.</div>
         </div>
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Corporate & Launch</div>
+          <div class="h6">Corporate & Launch</div>
           <div class="muted">Dealer meets, product launches, split-screen AV & AGM streams.</div>
         </div>
       </div>
 
-      <div class="grid cols-2" style="margin-top:14px">
+      <div class="row cols-2" style="margin-top:14px">
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Typical Sizes</div>
+          <div class="h6">Typical Sizes</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip">8×6 ft</span>
-            <span class="chip">12×8 ft</span>
-            <span class="chip">16×10 ft</span>
-            <span class="chip">20×12 ft</span>
+            <span class="pill">8×6 ft</span>
+            <span class="pill">12×8 ft</span>
+            <span class="pill">16×10 ft</span>
+            <span class="pill">20×12 ft</span>
           </div>
         </div>
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Includes</div>
-          <ul class="muted" style="margin:8px 0 0 18px">
+          <div class="h6">Includes</div>
+          <ul class="list">
             <li>Panels (indoor/outdoor as per venue)</li>
             <li>Rigging/truss & clean cabling</li>
-            <li>On-site technician/operator</li>
+            <li>On-site technician / operator</li>
             <li>Playback + live feed integration</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Work / Gallery (LED only) -->
+    <div class="wrap"><div class="divider"></div></div>
+
+    <!-- Work / Gallery -->
     <section id="work" class="wrap reveal">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <div style="font-weight:800">Selected Work</div>
-        <a href="#contact" class="btn outline">Get a Quote</a>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
+        <div class="h6" style="margin:0">Selected Work</div>
+        <a href="#contact" class="btn">Get a Quote</a>
       </div>
+
       <div class="gallery">
-        <!-- Replace with your LED photos -->
-        <a class="g" href="#"><img alt="LED wall wedding" loading="lazy" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop"></a>
-        <a class="g" href="#"><img alt="Corporate LED screen" loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"></a>
-        <a class="g" href="#"><img alt="Concert LED visuals" loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop"></a>
-        <a class="g" href="#"><img alt="Outdoor LED screen" loading="lazy" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop"></a>
+        <!-- Replace with your LED images -->
+        <a class="g" href="#"><img alt="Wedding LED" loading="lazy" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Corporate LED" loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Concert LED" loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Outdoor LED" loading="lazy" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop"></a>
       </div>
     </section>
 
+    <div class="wrap"><div class="divider"></div></div>
+
     <!-- Contact -->
     <section id="contact" class="wrap reveal">
-      <div class="grid cols-2">
+      <div class="row cols-2">
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Quick Estimate</div>
+          <div class="h6">Quick Estimate</div>
           <form onsubmit="return sendQuote(event)">
             <div class="row cols-2">
               <div>
@@ -271,62 +260,57 @@
             </div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
               <button class="btn primary" type="submit">Send on WhatsApp</button>
-              <a class="btn outline" href="tel:+917888218884">Call Now</a>
+              <a class="btn" href="tel:+917888218884">Call Now</a>
             </div>
-            <p class="mini" style="margin-top:8px">Opens WhatsApp with a pre-filled message. You can edit before sending.</p>
+            <p class="note" style="margin-top:8px">Opens WhatsApp with a pre-filled message. You can edit before sending.</p>
           </form>
         </div>
 
         <div class="card">
-          <div style="font-weight:800;margin-bottom:6px">Direct Contacts</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <div class="h6">Direct Contacts</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
             <div>
-              <div><b>Pro — Shubham Bhoir</b></div>
-              <div class="mini">Call / WhatsApp</div>
-              <div class="mini" style="margin-top:6px">+91 78882 18884</div>
+              <div style="font-weight:800">Pro — Shubham Bhoir</div>
+              <div class="note" style="margin-top:6px">+91 78882 18884</div>
             </div>
             <div class="cta">
               <a class="btn primary" href="tel:+917888218884">Call</a>
-              <a class="btn outline" href="https://wa.me/917888218884?text=Hi%20Shubham,%20need%20an%20LED%20wall.">WhatsApp</a>
+              <a class="btn" href="https://wa.me/917888218884?text=Hi%20Shubham,%20need%20an%20LED%20wall.">WhatsApp</a>
             </div>
           </div>
-          <div style="height:14px"></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <div class="divider" style="margin:12px 0"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
             <div>
-              <div><b>Pro — Omkar Bhoir</b></div>
-              <div class="mini">Call / WhatsApp</div>
-              <div class="mini" style="margin-top:6px">+91 87969 6851</div>
+              <div style="font-weight:800">Pro — Omkar Bhoir</div>
+              <div class="note" style="margin-top:6px">+91 87969 6851</div>
             </div>
             <div class="cta">
               <a class="btn primary" href="tel:+918796968651">Call</a>
-              <a class="btn outline" href="https://wa.me/918796968651?text=Hi%20Omkar,%20need%20an%20LED%20wall.">WhatsApp</a>
+              <a class="btn" href="https://wa.me/918796968651?text=Hi%20Omkar,%20need%20an%20LED%20wall.">WhatsApp</a>
             </div>
           </div>
         </div>
       </div>
-      <p class="mini" style="margin-top:10px">Pricing depends on size, pixel pitch, duration, height, travel & power. Share details for an exact quote.</p>
+      <p class="note" style="margin-top:10px">Pricing depends on size, pixel pitch, duration, height, travel & power. Share details for an exact quote.</p>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div class="mini">© <span id="yr"></span> sgdledwall • All rights reserved</div>
-      <div class="mini">Made for fast booking • Dark theme</div>
+      <div class="note">© <span id="yr"></span> sgdledwall • All rights reserved</div>
+      <div class="note">Dark minimal • Fast booking</div>
     </div>
   </footer>
 
 <script>
-  // Year
+  // year
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Reveal-on-scroll (gentle)
+  // reveal (respect reduced motion)
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!prefersReduced){
     const io = new IntersectionObserver((entries)=>{
-      for(const e of entries){
-        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
-      }
+      for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }
     }, {threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   } else {
@@ -344,8 +328,7 @@ Event date: ${date}
 City/Venue: ${city}
 Approx size: ${size}
 My WhatsApp: ${phone}`);
-    // default: Shubham (you can change to Omkar by swapping number)
-    window.open(`https://wa.me/917888218884?text=${text}`, '_blank');
+    window.open(`https://wa.me/917888218884?text=${text}`, '_blank'); // route to Shubham
     return false;
   }
 </script>
