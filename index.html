@@ -12,80 +12,71 @@
     --surface:#fafafa;     /* card bg */
     --ink:#1c1c1c;         /* main text (dark) */
     --muted:#5f6368;       /* secondary */
-    --line:#e2e2e2;        /* divider */
+    --line:#e8e8e8;        /* divider */
     --accent:#FFD24C;      /* royal gold */
-    --accent-dark:#1b1300; /* text on gold */
-    --radius:12px;
+    --accent-ink:#111006;  /* text on gold */
+    --radius:14px;
     --max:1100px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:'Poppins',sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.65;
-  }
+  body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--max);margin:auto;padding:0 20px}
-  
+
   /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--accent)}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--accent)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
   .brand{display:flex;align-items:center;gap:10px}
-  .logo{width:42px;height:42px;border-radius:8px;object-fit:contain;background:#fff;border:2px solid var(--accent)}
+  .logo{width:44px;height:44px;border-radius:10px;object-fit:contain;background:#fff;border:2px solid var(--accent)}
   .title{font-weight:800;font-size:20px}
   .sub{color:var(--muted);font-size:12px}
   .menu{display:flex;gap:20px;font-size:14px}
-  .menu a{color:var(--muted);transition:.2s}
-  .menu a:hover{color:var(--accent)}
-  
+  .menu a{color:var(--muted)} .menu a:hover{color:#c59a1b}
+
   /* Buttons */
-  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:999px;font-weight:600;transition:.2s;cursor:pointer}
-  .btn.primary{background:var(--accent);color:var(--accent-dark);border:none}
-  .btn.primary:hover{filter:brightness(1.05);box-shadow:0 0 10px rgba(0,0,0,.15)}
-  .btn.outline{border:2px solid var(--accent);color:var(--accent);background:transparent}
-  .btn.outline:hover{background:rgba(255,210,76,.1)}
-  
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;
+    font-weight:700;line-height:1;border:2px solid transparent;transition:.18s ease}
+  .btn.primary{background:var(--accent);color:var(--accent-ink)}
+  .btn.primary:hover{filter:brightness(1.04);box-shadow:0 6px 14px rgba(0,0,0,.08)}
+  .btn.outline{background:#fff;border-color:var(--accent);color:#8c6e17}  /* <-- FIX: stronger contrast */
+  .btn.outline:hover{background:rgba(255,210,76,.12)}
+
   /* Sections */
   section{padding:60px 0}
-  h1,h2{color:var(--accent);font-weight:800}
+  h1,h2{color:#c59a1b;font-weight:800}
   h1{font-size:clamp(28px,5vw,44px);margin-bottom:12px}
   h2{font-size:26px;margin-bottom:20px}
   .lead{color:var(--muted);max-width:780px}
-  
+
   /* Pills */
   .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-  .pill{padding:10px 14px;border-radius:999px;background:#fff;border:2px solid var(--accent);color:var(--accent-dark);font-weight:600;font-size:14px}
-  
+  .pill{padding:10px 14px;border-radius:999px;background:#fff;border:2px solid var(--accent);
+    color:#7a5d11;font-weight:600;font-size:14px}
+
   /* Grid / Cards */
   .grid{display:grid;gap:18px}
-  @media(min-width:840px){.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:repeat(3,1fr)}}
-  .card{background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);padding:20px;transition:.3s}
-  .card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-  .h6{color:var(--accent-dark);font-size:14px;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+  @media(min-width:860px){.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);padding:22px;transition:.2s}
+  .card:hover{box-shadow:0 6px 20px rgba(0,0,0,.06)}
+  .h6{color:#7a5d11;font-size:13px;font-weight:800;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
   .muted{color:var(--muted)}
   .list{margin:6px 0 0 18px}
-  
-  /* Gallery */
-  .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-  .g{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;border:2px solid var(--accent)}
-  .g img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-  .g:hover img{transform:scale(1.05)}
-  
-  /* Form */
-  label{display:block;font-size:13px;color:var(--accent-dark);margin:0 0 6px}
-  input,select{width:100%;padding:12px;border-radius:10px;border:2px solid var(--line);background:#fff;color:var(--ink)}
-  input:focus,select:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(255,210,76,.3)}
-  
+
+  /* Gallery (LED-only) */
+  .gallery{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .g{aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:2px solid var(--accent);background:#fff}
+  .g img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease, filter .35s ease}
+  .g:hover img{transform:scale(1.03);filter:contrast(1.05)}
+
+  /* Contact list styles (fix) */
+  .contact-line{display:flex;align-items:center;gap:10px;margin:8px 0}
+  .contact-line svg{width:18px;height:18px;flex:0 0 18px;color:#c0392b}
+  .call-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+
   /* Footer */
-  footer{border-top:3px solid var(--accent);padding:20px 0;text-align:center;color:var(--muted);font-size:14px;background:#fff}
-  
-  /* Animation */
-  @media(prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.show{opacity:1;transform:none}
-  }
+  footer{border-top:3px solid var(--accent);padding:20px 0;text-align:center;color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
@@ -114,9 +105,9 @@
 
 <main>
   <!-- Hero -->
-  <section class="wrap reveal">
+  <section class="wrap">
     <h1>Premium LED Wall Rentals</h1>
-    <p class="lead">We provide elegant, reliable LED screens for weddings, festivals and corporate events. Complete with setup, playback and on-site operators.</p>
+    <p class="lead">Elegant, reliable LED screens for weddings, festivals and corporate events. Complete with setup, playback and on-site operators.</p>
     <div class="kpis">
       <span class="pill">Indoor / Outdoor</span>
       <span class="pill">Live Feed</span>
@@ -126,7 +117,7 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="wrap reveal">
+  <section id="services" class="wrap">
     <h2>Our Services</h2>
     <div class="grid cols-3">
       <div class="card"><div class="h6">Weddings & Social</div><div class="muted">Reception stages, live feeds, photo reels.</div></div>
@@ -135,21 +126,25 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="work" class="wrap reveal">
+  <!-- Gallery (LED-only images) -->
+  <section id="work" class="wrap">
     <h2>Recent Work</h2>
     <div class="gallery">
-      <div class="g"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop" alt="LED wedding"></div>
-      <div class="g"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" alt="Corporate LED"></div>
-      <div class="g"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Stage LED"></div>
-      <div class="g"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop" alt="Outdoor LED"></div>
+      <!-- curated LED-wall shots -->
+      <figure class="g"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1500&auto=format&fit=crop" alt="LED stage wall close-up"></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1500&auto=format&fit=crop" alt="Corporate LED presentation"></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1500&auto=format&fit=crop" alt="LED panels detail"></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1514511542834-9d3a4f7c4d49?q=80&w=1500&auto=format&fit=crop" alt="Outdoor LED setup"></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1603487742131-2e32f6f3f6bf?q=80&w=1500&auto=format&fit=crop" alt="LED wall with lights"></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1500&auto=format&fit=crop" alt="Event crowd with LED wall"></figure>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="wrap reveal">
+  <section id="contact" class="wrap">
     <h2>Get in Touch</h2>
     <div class="grid cols-2">
+      <!-- Quick Quote -->
       <div class="card">
         <div class="h6">Quick Quote</div>
         <form onsubmit="return sendQuote(event)">
@@ -169,11 +164,25 @@
           <button class="btn primary" type="submit" style="margin-top:12px">Send on WhatsApp</button>
         </form>
       </div>
+
+      <!-- Direct Contacts (FIXED) -->
       <div class="card">
         <div class="h6">Direct Contacts</div>
-        <p><b>Pro — Shubham Bhoir</b><br>📞 +91 78882 18884</p>
-        <p><b>Pro — Omkar Bhoir</b><br>📞 +91 87969 6851</p>
-        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+
+        <div style="margin-bottom:8px;font-weight:700">Pro — Shubham Bhoir</div>
+        <div class="contact-line">
+          <!-- phone icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.25a1 1 0 01-1 1C12.42 21.57 2.43 11.58 2.43 2.99a1 1 0 011-1H6.7a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          <a href="tel:+917888218884">+91 78882 18884</a>
+        </div>
+
+        <div style="margin-top:12px;font-weight:700">Pro — Omkar Bhoir</div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.25a1 1 0 01-1 1C12.42 21.57 2.43 11.58 2.43 2.99a1 1 0 011-1H6.7a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          <a href="tel:+918796968651">+91 87969 6851</a>
+        </div>
+
+        <div class="call-row">
           <a class="btn primary" href="tel:+917888218884">Call Shubham</a>
           <a class="btn outline" href="https://wa.me/917888218884?text=Hi%20Shubham,%20need%20an%20LED%20wall.">WhatsApp</a>
         </div>
@@ -187,24 +196,18 @@
 </footer>
 
 <script>
-document.getElementById('yr').textContent=new Date().getFullYear();
-function sendQuote(e){
-  e.preventDefault();
-  const v=id=>document.getElementById(id).value.trim();
-  const msg=`Hi, I'm ${v('name')}.
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  function sendQuote(e){
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const msg=`Hi, I'm ${v('name')}.
 Event date: ${v('date')}
 City/Venue: ${v('city')}
 Size: ${v('size')}
 My WhatsApp: ${v('phone')}`;
-  window.open(`https://wa.me/917888218884?text=${encodeURIComponent(msg)}`,'_blank');
-}
-const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduced){
-  const io=new IntersectionObserver((entries)=>{
-    for(const e of entries){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}
-  },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'))}
+    window.open(`https://wa.me/917888218884?text=${encodeURIComponent(msg)}`,'_blank');
+  }
 </script>
 </body>
 </html>
