@@ -3,236 +3,282 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>sgdledwall — LED Wall Rental for Weddings, Festivals & Events</title>
-<meta name="description" content="Minimal, fast contact page for LED wall rentals. Weddings, festivals, corporate events. Call Shubham or Omkar for a quick quote." />
-<meta name="theme-color" content="#0f766e" />
+<title>sgdledwall — LED Wall Rentals for Weddings, Festivals & Corporate Events</title>
+<meta name="description" content="Minimal, fast site for LED wall rentals. Weddings, festivals, corporate events. Call Shubham or Omkar for availability & pricing." />
+<meta name="theme-color" content="#111111" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="sgdledwall — LED Wall Rental" />
-<meta property="og:description" content="LED screens for weddings, festivals & events. Contact for availability & pricing." />
+<!-- OG -->
+<meta property="og:title" content="sgdledwall — LED Wall Rentals" />
+<meta property="og:description" content="Simple, reliable LED screens with operator & quick setup." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://instagram.fbom56-1.fna.fbcdn.net/v/t51.2885-19/470153798_9038058242882055_5571483738364597209_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fbom56-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2QHNoeO4K1Ww3ceoTJkjW99NJVzOZ6R24ZFuu0V5gRmMIkYhsRNlaRVHFwgTpP11e0c&_nc_ohc=mHdS7_Tj1eoQ7kNvwFkdJQc&_nc_gid=H4vfbwI-aYsmQ07--CKXXg&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfZjuo85cIloCV6uhJscTb-g5vDUnEEoH-LK_-JCArSKvQ&oe=68C0FF9D&_nc_sid=7a9f4b" />
-
-<!-- JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"sgdledwall",
-  "image":"https://instagram.fbom56-1.fna.fbcdn.net/v/t51.2885-19/470153798_9038058242882055_5571483738364597209_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fbom56-1.fna.fbcdn.net&_nc_cat=103",
-  "telephone":["+917888218884","+918796968651"],
-  "description":"LED wall rental for weddings, festivals and corporate events. Call for a quick quote."
-}
-</script>
 
 <style>
   :root{
     --bg:#ffffff;
-    --text:#0b1220;
-    --muted:#5b6775;
-    --line:#e6e9ee;
-    --accent:#0f766e; /* teal */
-    --accent-ink:#ffffff;
+    --ink:#111111;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --accent:#111111; /* solid black accent for craft-like vibe */
     --radius:12px;
+    --max:1080px;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
-    font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-    color:var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--ink);
     background:var(--bg);
-    line-height:1.55;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   }
-  .wrap{max-width:880px;margin-inline:auto;padding:24px}
-  header{display:flex;gap:12px;align-items:center;padding:8px 0 18px;border-bottom:1px solid var(--line)}
-  .logo{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#ddd}
-  .brand{font-weight:700;font-size:18px;letter-spacing:.2px}
-  .sub{color:var(--muted);font-size:14px;margin-top:2px}
-  h1{font-size:28px;line-height:1.2;margin:18px 0 8px;font-weight:800;letter-spacing:.2px}
-  p.lead{color:var(--muted);margin:0 0 16px}
-  .row{display:grid;gap:14px}
-  @media (min-width:720px){ .row.cols-2{grid-template-columns:1fr 1fr} }
-  section{padding:18px 0;border-bottom:1px solid var(--line)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max); margin:0 auto; padding:20px}
+  /* Header */
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:40px;height:40px;border-radius:50%;object-fit:cover;background:#ddd}
+  .title{font-weight:800;letter-spacing:.2px}
+  .menu{display:flex;gap:16px;flex-wrap:wrap}
+  .menu a{font-size:14px;color:var(--muted)}
+  .cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--ink);border-radius:8px;font-weight:600}
+  .btn.fill{background:var(--accent);color:#fff}
+  .btn.ghost{background:#fff}
+  /* Section */
+  section{padding:28px 0;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:none}
-  ul.clean{margin:8px 0;padding-left:18px}
-  .note{color:var(--muted);font-size:13px}
-  .card{
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:14px;
-    background:#fff;
-  }
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:10px 14px;border-radius:10px;border:1px solid var(--line);
-    background:#fff;color:var(--text);text-decoration:none;font-weight:600;
-  }
-  .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-  .btn.block{width:100%}
-  .btn.ghost{background:#fff;color:var(--text)}
-  .grid-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .kvs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-  @media (min-width:720px){ .kvs{grid-template-columns:repeat(4,1fr)} }
-  .k{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
-  .k b{font-size:16px}
-  .contacts .who{display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .mini{font-size:13px;color:var(--muted)}
-  footer{padding:18px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-  /* form */
-  label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-  input,select,textarea{
-    width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--text);outline:none;
-  }
-  input:focus,select:focus,textarea:focus{border-color:#c8d1db}
+  .h1{font-size:clamp(28px,4.6vw,44px);line-height:1.15;margin:6px 0 6px;font-weight:800}
+  .lead{color:var(--muted);max-width:780px;margin:0}
+  .grid{display:grid;gap:14px}
+  @media (min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:#fff}
+  .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  @media (min-width:700px){ .kpis{grid-template-columns:repeat(4,1fr)} }
+  .k{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+  .k b{font-weight:800}
+  .muted{color:var(--muted)}
+  .list{margin:8px 0 0 16px}
+  .strip{display:flex;gap:24px;flex-wrap:wrap;align-items:center;opacity:.75}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:14px}
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media (min-width:700px){ .gallery{grid-template-columns:repeat(4,1fr)} }
+  .g{aspect-ratio:4/3;border:1px solid var(--line);border-radius:10px;overflow:hidden;position:relative;background:#fafafa}
+  .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  /* Contact form */
+  label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}
+  input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;outline:none;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{border-color:#cfd5de}
+  .row{display:grid;gap:12px}
+  @media (min-width:720px){ .row.cols-2{grid-template-columns:repeat(2,1fr)} }
+  footer{padding:22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- Header -->
     <header>
-      <img class="logo" alt="sgdledwall logo"
-           src="https://instagram.fbom56-1.fna.fbcdn.net/v/t51.2885-19/470153798_9038058242882055_5571483738364597209_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fbom56-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2QHNoeO4K1Ww3ceoTJkjW99NJVzOZ6R24ZFuu0V5gRmMIkYhsRNlaRVHFwgTpP11e0c&_nc_ohc=mHdS7_Tj1eoQ7kNvwFkdJQc&_nc_gid=H4vfbwI-aYsmQ07--CKXXg&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfZjuo85cIloCV6uhJscTb-g5vDUnEEoH-LK_-JCArSKvQ&oe=68C0FF9D&_nc_sid=7a9f4b"
-           onerror="this.style.display='none'">
-      <div>
-        <div class="brand">sgdledwall</div>
-        <div class="sub">LED Wall Rental • Weddings • Festivals • Corporate</div>
+      <div class="nav">
+        <div class="brand">
+          <img class="logo" alt="sgdledwall logo"
+               src="https://instagram.fbom56-1.fna.fbcdn.net/v/t51.2885-19/470153798_9038058242882055_5571483738364597209_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fbom56-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2QHNoeO4K1Ww3ceoTJkjW99NJVzOZ6R24ZFuu0V5gRmMIkYhsRNlaRVHFwgTpP11e0c&_nc_ohc=mHdS7_Tj1eoQ7kNvwFkdJQc&_nc_gid=H4vfbwI-aYsmQ07--CKXXg&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfZjuo85cIloCV6uhJscTb-g5vDUnEEoH-LK_-JCArSKvQ&oe=68C0FF9D&_nc_sid=7a9f4b"
+               onerror="this.remove()">
+          <div>
+            <div class="title">sgdledwall</div>
+            <div class="muted" style="font-size:13px">LED Wall Rentals • Weddings • Festivals • Corporate</div>
+          </div>
+        </div>
+        <nav class="menu">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="cta">
+          <a class="btn fill" href="tel:+917888218884">Call</a>
+          <a class="btn ghost" href="https://wa.me/917888218884?text=Hi%20sgdledwall,%20need%20an%20LED%20wall.">WhatsApp</a>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section>
-        <h1>Simple, reliable LED screens for your event.</h1>
-        <p class="lead">Setup, playback & on-site operator included. Indoor/outdoor panels, clean cabling, and on-time delivery.</p>
+    <!-- Hero -->
+    <section>
+      <h1 class="h1">We build clean, reliable LED screens for events.</h1>
+      <p class="lead">From intimate weddings to large corporate & festival stages — crisp visuals, safe rigging, on-time setup, and an on-site operator.</p>
 
-        <div class="kvs" style="margin-top:10px">
-          <div class="k"><b>Indoor/Outdoor</b><div class="mini">Stage backdrops</div></div>
-          <div class="k"><b>Live Feed</b><div class="mini">Cameras & mixers</div></div>
-          <div class="k"><b>Fast Setup</b><div class="mini">Truss & rigging</div></div>
-          <div class="k"><b>Operator</b><div class="mini">Full support</div></div>
+      <div class="kpis">
+        <div class="k"><b>Indoor / Outdoor</b><div class="muted">Stage backdrops</div></div>
+        <div class="k"><b>Live Feed</b><div class="muted">Cameras & switchers</div></div>
+        <div class="k"><b>Fast Setup</b><div class="muted">Truss & cabling</div></div>
+        <div class="k"><b>Operator</b><div class="muted">End-to-end support</div></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="grid cols-3">
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Weddings & Social</div>
+          <div class="muted">Reception stage LED, photo reels, entries, live camera.</div>
         </div>
-      </section>
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Festivals & Concerts</div>
+          <div class="muted">Main & side screens, countdowns, sponsor loops.</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Corporate & Launch</div>
+          <div class="muted">Dealer meets, product launches, split-screen AV.</div>
+        </div>
+      </div>
 
-      <section class="row cols-2">
-        <div>
-          <h2 style="font-size:18px;margin:0 0 8px">Services</h2>
-          <ul class="clean">
-            <li>Weddings & receptions (photo reels, live cam)</li>
-            <li>Festivals & concerts (main/side screens)</li>
-            <li>Corporate & launches (presentations, AV)</li>
+      <div class="grid cols-2" style="margin-top:14px">
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Typical Sizes</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">8×6 ft</span>
+            <span class="chip">12×8 ft</span>
+            <span class="chip">16×10 ft</span>
+            <span class="chip">20×12 ft</span>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Includes</div>
+          <ul class="list">
+            <li>Panels (indoor/outdoor as per venue)</li>
+            <li>Rigging/truss & clean cabling</li>
+            <li>On-site technician/operator</li>
+            <li>Basic playback + live feed integration</li>
           </ul>
-          <p class="note">Power/generator can be arranged via partners on request.</p>
         </div>
-        <div>
-          <h2 style="font-size:18px;margin:0 0 8px">Typical sizes</h2>
-          <div class="grid-mini">
-            <div class="card">8×6 ft • Small</div>
-            <div class="card">12×8 ft • Medium</div>
-            <div class="card">16×10 ft • Large</div>
-            <div class="card">20×12 ft • XL</div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="contacts">
-        <div class="card" style="margin-bottom:10px">
-          <div class="who">
-            <div>
-              <div><b>Pro — Shubham Bhoir</b></div>
-              <div class="mini">Call/WhatsApp</div>
+    <!-- Work / Gallery -->
+    <section id="work">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-weight:800">Selected Work</div>
+        <a href="#contact" class="btn ghost">Get a Quote</a>
+      </div>
+      <div class="gallery">
+        <!-- Replace these with your own photos -->
+        <a class="g" href="#"><img alt="Stage LED wall" loading="lazy" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Corporate setup" loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Concert visuals" loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop"></a>
+        <a class="g" href="#"><img alt="Outdoor LED" loading="lazy" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop"></a>
+      </div>
+    </section>
+
+    <!-- Clients / Cities strip -->
+    <section id="clients">
+      <div style="font-weight:800;margin-bottom:8px">We operate across</div>
+      <div class="strip">
+        <span class="chip">Mumbai</span>
+        <span class="chip">Pune</span>
+        <span class="chip">Nashik</span>
+        <span class="chip">Thane</span>
+        <span class="chip">Aurangabad</span>
+        <span class="chip">+ nearby</span>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contact">
+      <div class="grid cols-2">
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px">Quick Estimate</div>
+          <form onsubmit="return sendQuote(event)">
+            <div class="row cols-2">
+              <div>
+                <label for="name">Your Name</label>
+                <input id="name" required placeholder="e.g., Rahul" />
+              </div>
+              <div>
+                <label for="phone">Your WhatsApp</label>
+                <input id="phone" required placeholder="+91 9XXXXXXXXX" />
+              </div>
             </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <a class="btn primary" href="tel:+917888218884">Call</a>
-              <a class="btn" href="https://wa.me/917888218884?text=Hi%20Shubham,%20need%20an%20LED%20wall.">WhatsApp</a>
+            <div class="row cols-2" style="margin-top:10px">
+              <div>
+                <label for="date">Event Date</label>
+                <input id="date" type="date" required />
+              </div>
+              <div>
+                <label for="city">City / Venue</label>
+                <input id="city" required placeholder="City or hall name" />
+              </div>
             </div>
-          </div>
-          <div class="mini" style="margin-top:8px">+91 78882 18884</div>
+            <div style="margin-top:10px">
+              <label for="size">Approx Screen Size</label>
+              <select id="size">
+                <option>Not sure yet</option>
+                <option>8×6 ft</option>
+                <option>12×8 ft</option>
+                <option>16×10 ft</option>
+                <option>20×12 ft</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+              <button class="btn fill" type="submit">Send on WhatsApp</button>
+              <a class="btn ghost" href="tel:+917888218884">Call Now</a>
+            </div>
+            <p class="muted" style="margin-top:8px">Opens WhatsApp with a pre-filled message. You can edit before sending.</p>
+          </form>
         </div>
 
         <div class="card">
-          <div class="who">
+          <div style="font-weight:800;margin-bottom:6px">Direct Contacts</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <div>
+              <div><b>Pro — Shubham Bhoir</b></div>
+              <div class="muted">Call / WhatsApp</div>
+              <div class="muted" style="margin-top:6px">+91 78882 18884</div>
+            </div>
+            <div class="cta">
+              <a class="btn fill" href="tel:+917888218884">Call</a>
+              <a class="btn ghost" href="https://wa.me/917888218884?text=Hi%20Shubham,%20need%20an%20LED%20wall.">WhatsApp</a>
+            </div>
+          </div>
+          <div style="height:14px"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
             <div>
               <div><b>Pro — Omkar Bhoir</b></div>
-              <div class="mini">Call/WhatsApp</div>
+              <div class="muted">Call / WhatsApp</div>
+              <div class="muted" style="margin-top:6px">+91 87969 6851</div>
             </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <a class="btn primary" href="tel:+918796968651">Call</a>
-              <a class="btn" href="https://wa.me/918796968651?text=Hi%20Omkar,%20need%20an%20LED%20wall.">WhatsApp</a>
+            <div class="cta">
+              <a class="btn fill" href="tel:+918796968651">Call</a>
+              <a class="btn ghost" href="https://wa.me/918796968651?text=Hi%20Omkar,%20need%20an%20LED%20wall.">WhatsApp</a>
             </div>
           </div>
-          <div class="mini" style="margin-top:8px">+91 87969 6851</div>
         </div>
-      </section>
-
-      <section>
-        <h2 style="font-size:18px;margin:0 0 8px">Quick estimate</h2>
-        <form onsubmit="return sendQuote(event)">
-          <div class="row cols-2">
-            <div>
-              <label for="name">Your Name</label>
-              <input id="name" required placeholder="e.g., Rahul" />
-            </div>
-            <div>
-              <label for="phone">Your WhatsApp</label>
-              <input id="phone" required placeholder="+91 9XXXXXXXXX" />
-            </div>
-          </div>
-          <div class="row cols-2" style="margin-top:10px">
-            <div>
-              <label for="date">Event Date</label>
-              <input id="date" type="date" required />
-            </div>
-            <div>
-              <label for="city">City / Venue</label>
-              <input id="city" required placeholder="City or hall name" />
-            </div>
-          </div>
-          <div style="margin-top:10px">
-            <label for="size">Approx Screen Size</label>
-            <select id="size">
-              <option>Not sure yet</option>
-              <option>8×6 ft</option>
-              <option>12×8 ft</option>
-              <option>16×10 ft</option>
-              <option>20×12 ft</option>
-            </select>
-          </div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-            <button class="btn primary" type="submit">Send on WhatsApp</button>
-            <a class="btn ghost" href="tel:+917888218884">Call Now</a>
-          </div>
-          <p class="note" style="margin-top:8px">Opens WhatsApp with a pre-filled message; you can edit before sending.</p>
-        </form>
-      </section>
-    </main>
+      </div>
+      <p class="muted" style="margin-top:10px">Pricing depends on size, pixel pitch, duration, height, travel & power. Share details for an exact quote.</p>
+    </section>
 
     <footer>
-      © <span id="yr"></span> sgdledwall
+      © <span id="yr"></span> sgdledwall • All rights reserved
     </footer>
   </div>
 
 <script>
+  // year
   document.getElementById('yr').textContent = new Date().getFullYear();
 
+  // WhatsApp quote
   function sendQuote(e){
     e.preventDefault();
-    const get = id => document.getElementById(id).value.trim();
-    const name = get('name');
-    const phone = get('phone');
-    const date = get('date');
-    const city = get('city');
-    const size = get('size');
-
-    const msg = [
-      `Hi, I'm ${name}.`,
-      `Event date: ${date}`,
-      `City/Venue: ${city}`,
-      `Approx size: ${size}`,
-      `My WhatsApp: ${phone}`
-    ].join('\n');
-
-    // default to Shubham; edit if you want routing UI
-    const target = '917888218884';
-    const url = `https://wa.me/${target}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    const v = id => document.getElementById(id).value.trim();
+    const name = v('name'), phone = v('phone'), date = v('date'), city = v('city'), size = v('size');
+    const text = encodeURIComponent(
+`Hi, I'm ${name}.
+Event date: ${date}
+City/Venue: ${city}
+Approx size: ${size}
+My WhatsApp: ${phone}`);
+    // default route → Shubham (edit to add a selector if needed)
+    window.open(`https://wa.me/917888218884?text=${text}`, '_blank');
     return false;
   }
 </script>
