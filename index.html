@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>sgdledwall — LED Wall Rentals (Royal Gold)</title>
+<title>sgdledwall — LED Wall Rentals (Vibrant Purple)</title>
 <meta name="theme-color" content="#0b0f14"/>
 <style>
-:root{--bg:#0b0f14;--surface:#0f141a;--ink:#f3f4f6;--muted:#c9c9cf;--line:#23262d;--chip:#121720;
---accent:#ffd24c; /* gold */ --radius:12px;--max:1040px}
-*{box-sizing:border-box}html,body{margin:0}body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Arial;
-background:var(--bg);color:var(--ink);line-height:1.65}
-a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+:root{--bg:#0b0f14;--surface:#0f141a;--ink:#eaeef5;--muted:#a7b4c6;--line:#1b2330;--chip:#0d141b;
+--accent:#8b5cf6; /* purple */ --radius:12px;--max:1040px}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Arial;background:var(--bg);color:var(--ink);line-height:1.65}
+a{text-decoration:none;color:inherit}.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}img{max-width:100%;display:block}
+header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-.brand{display:flex;align-items:center;gap:10px}.logo{width:38px;height:38px;border-radius:10px;background:#10141b;border:1px solid #272a31;object-fit:contain}
-.menu{display:flex;gap:18px}.menu a{color:#bfbfc6;font-size:14px}.menu a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid #3a3a40;font-weight:700}
-.btn:hover{border-color:#4a4a52;background:#11161f}.btn.primary{background:var(--accent);color:#1b1300;border-color:transparent}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:36px;height:36px;border-radius:10px;background:#0f1320;border:1px solid #22253a;object-fit:contain}
+.menu{display:flex;gap:16px}.menu a{color:var(--muted);font-size:14px}.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid #2a2e3d;font-weight:700}
+.btn:hover{background:#101527;border-color:#3a4160}.btn.primary{background:var(--accent);color:#110a1f;border-color:transparent}
 section{padding:34px 0}h1{font-size:clamp(28px,5vw,44px);margin:6px 0 8px;line-height:1.12;font-weight:900}
-.lead{color:#cfcfd6;max-width:760px}
-.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.pill{background:#141923;border:1px solid #2a2f38;color:#d4d4db;border-radius:999px;padding:10px 12px;font-weight:600;font-size:14px}
+.lead{color:var(--muted);max-width:760px}.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.pill{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:10px 12px;font-weight:600;color:#d2d9e6;font-size:14px}
 .grid{display:grid;gap:14px}@media(min-width:840px){.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-.h6{font-size:13px;color:#e8dbb5;text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin:0 0 8px}
-.muted{color:#cfcfd6}.list{margin:6px 0 0 18px}
+.h6{font-size:13px;color:#d8c8ff;text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin:0 0 8px}
+.muted{color:var(--muted)}.list{margin:6px 0 0 18px}
 .gallery{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}@media(min-width:700px){.gallery{grid-template-columns:repeat(4,1fr)}}
-.g{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#0b1218;border:1px solid #242833}
+.g{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#0b121f;border:1px solid var(--line)}
 .g img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.g:hover img{transform:scale(1.02)}
-label{display:block;font-size:13px;color:#e8e1cf;margin:0 0 6px}
-input,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #2e3540;background:#111620;color:var(--ink)}
-input:focus,select:focus{border-color:#b98a12;box-shadow:0 0 0 3px rgba(255,210,76,.25);outline:0}
-footer{border-top:1px solid var(--line);padding:22px 0;color:#bdbdbd;font-size:14px}
+label{display:block;font-size:13px;color:#d7d9e3;margin:0 0 6px}
+input,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #242a40;background:#0e1424;color:var(--ink)}
+input:focus,select:focus{border-color:#7c5af0;box-shadow:0 0 0 3px rgba(139,92,246,.28);outline:0}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:14px}
 </style></head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="brand">
       <img class="logo" src="https://i.postimg.cc/N01HwxTw/image.png" alt="logo"
-           onerror="this.style.display='none';document.getElementById('fb2').style.display='inline-flex'">
-      <div><div style="display:flex;gap:8px;align-items:center"><span id="fb2" style="display:none" class="pill">sgdledwall</span><strong>sgdledwall</strong></div>
-      <div style="color:#c8bfaa;font-size:12px">LED Wall Rentals • Weddings • Festivals • Corporate</div></div>
+           onerror="this.style.display='none';document.getElementById('fb3').style.display='inline-flex'">
+      <div><div style="display:flex;gap:8px;align-items:center"><span id="fb3" class="pill" style="display:none">sgdledwall</span><strong>sgdledwall</strong></div>
+      <div style="color:#b9bfe0;font-size:12px">LED Wall Rentals • Weddings • Festivals • Corporate</div></div>
     </div>
     <nav class="menu"><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
     <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary" href="tel:+917888218884">Call</a>
@@ -47,30 +46,30 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#bdbdbd;font-size:1
 
 <main class="wrap">
   <section>
-    <h1>Elegant LED screens for premium events.</h1>
-    <p class="lead">Perfect for weddings & high-profile shows. Crisp visuals, safe rigging, timely setup and on-site operators.</p>
+    <h1>Bold LED visuals for concerts & shows.</h1>
+    <p class="lead">High-impact screens, reliable rigging, quick setup and pro operators — perfect for concerts, festivals & launch events.</p>
     <div class="kpis"><span class="pill">Indoor / Outdoor</span><span class="pill">Live Feed</span><span class="pill">Fast Setup</span><span class="pill">Pro Operator</span></div>
   </section>
 
   <section id="services">
     <div class="grid cols-3">
-      <div class="card"><div class="h6">Weddings & Social</div><div class="muted">Reception stage LED, photo reels, entries and live camera.</div></div>
-      <div class="card"><div class="h6">Festivals & Concerts</div><div class="muted">Main & side screens, sponsor loops, countdowns, motion graphics.</div></div>
-      <div class="card"><div class="h6">Corporate & Launch</div><div class="muted">Dealer meets, product launches, split-screen AV & AGM streams.</div></div>
+      <div class="card"><div class="h6">Weddings & Social</div><div class="muted">Reception LED, photo reels, entries, live camera.</div></div>
+      <div class="card"><div class="h6">Festivals & Concerts</div><div class="muted">Main/side screens, sponsor loops, countdowns.</div></div>
+      <div class="card"><div class="h6">Corporate & Launch</div><div class="muted">Dealer meets, product launches, split-screen AV.</div></div>
     </div>
     <div class="grid cols-2" style="margin-top:14px">
       <div class="card"><div class="h6">Typical Sizes</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill">8×6 ft</span><span class="pill">12×8 ft</span><span class="pill">16×10 ft</span><span class="pill">20×12 ft</span></div>
       </div>
       <div class="card"><div class="h6">Includes</div>
-        <ul class="list"><li>Panels (indoor/outdoor as per venue)</li><li>Rigging/truss & clean cabling</li><li>On-site technician / operator</li><li>Playback + live feed integration</li></ul>
+        <ul class="list"><li>Panels (indoor/outdoor as per venue)</li><li>Rigging/truss & clean cabling</li><li>Operator on site</li><li>Playback + live feed integration</li></ul>
       </div>
     </div>
   </section>
 
   <section id="work">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
-      <div class="h6" style="color:#e8dbb5;margin:0">Selected Work</div>
+      <div class="h6" style="color:#d8c8ff;margin:0">Selected Work</div>
       <a class="btn" href="#contact">Get a Quote</a>
     </div>
     <div class="gallery">
@@ -84,7 +83,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#bdbdbd;font-size:1
   <section id="contact">
     <div class="grid cols-2">
       <div class="card">
-        <div class="h6" style="color:#e8dbb5">Quick Estimate</div>
+        <div class="h6" style="color:#d8c8ff">Quick Estimate</div>
         <form onsubmit="return sendQuote(event)">
           <div class="grid cols-2" style="gap:12px">
             <div><label for="n">Your Name</label><input id="n" required placeholder="e.g., Rahul"></div>
@@ -104,7 +103,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#bdbdbd;font-size:1
         </form>
       </div>
       <div class="card">
-        <div class="h6" style="color:#e8dbb5">Direct Contacts</div>
+        <div class="h6" style="color:#d8c8ff">Direct Contacts</div>
         <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
           <div><strong>Pro — Shubham Bhoir</strong><div class="muted" style="margin-top:6px">+91 78882 18884</div></div>
           <div style="display:flex;gap:8px"><a class="btn primary" href="tel:+917888218884">Call</a>
@@ -118,12 +117,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#bdbdbd;font-size:1
         </div>
       </div>
     </div>
-    <div class="muted" style="font-size:12px;margin-top:10px">Pricing depends on size, pixel pitch, duration, height, travel & power.</div>
   </section>
 </main>
 
 <footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-  <div>© <span id="y"></span> sgdledwall • All rights reserved</div><div>Royal gold accent</div></div></footer>
+  <div>© <span id="y"></span> sgdledwall • All rights reserved</div><div>Vibrant purple accent</div></div></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 function sendQuote(e){e.preventDefault();const v=id=>document.getElementById(id).value.trim();
