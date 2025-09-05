@@ -4,56 +4,85 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>sgdledwall — LED Wall Rentals</title>
-<meta name="description" content="LED wall rental for weddings, festivals & corporate events. Contact Shubham or Omkar for details." />
+<meta name="description" content="Professional LED wall rentals for weddings, festivals, concerts and corporate events. Contact Shubham or Omkar for availability & pricing." />
 <style>
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;line-height:1.6}
-  header,footer{border-bottom:1px solid #eee;padding:16px}
-  footer{border-top:1px solid #eee;font-size:14px;color:#666;text-align:center}
-  .wrap{max-width:1000px;margin:auto;padding:20px}
+  :root{
+    --ink:#111;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --accent:#111; /* black accent */
+    --bg:#fff;
+    --radius:10px;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  header,footer{border-bottom:1px solid var(--line)}
+  footer{border-top:1px solid var(--line);font-size:14px;color:var(--muted);text-align:center;padding:20px}
+  .wrap{max-width:var(--max);margin:auto;padding:20px}
+  .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:12px 0}
+  .brand{font-weight:800;font-size:20px;letter-spacing:.3px}
+  .menu{display:flex;gap:18px;font-size:14px}
   h1{font-size:32px;margin:12px 0}
   h2{font-size:22px;margin:20px 0 10px}
   p{margin:0 0 12px}
   .grid{display:grid;gap:16px}
   @media(min-width:768px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:1fr 1fr 1fr}}
-  .card{border:1px solid #eee;padding:16px;border-radius:8px}
-  .btn{display:inline-block;padding:10px 16px;border-radius:6px;border:1px solid #111;text-decoration:none;font-weight:bold}
-  .btn.fill{background:#111;color:#fff}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff}
+  .btn{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--ink);font-weight:bold;transition:.2s}
+  .btn.fill{background:var(--accent);color:#fff}
+  .btn:hover{opacity:.85}
+  .btn.block{width:100%;text-align:center}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
   .gallery img{width:100%;border-radius:6px;object-fit:cover}
   form label{font-size:14px;margin-top:8px;display:block}
-  form input,form select{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;margin-top:4px}
+  form input,form select{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;margin-top:4px}
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-    <div style="font-weight:bold;font-size:20px">sgdledwall</div>
-    <nav style="display:flex;gap:16px;font-size:14px">
+  <div class="wrap nav">
+    <div class="brand">sgdledwall</div>
+    <nav class="menu">
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a class="btn fill" href="tel:+917888218884">Call</a>
+      <a class="btn" href="https://wa.me/917888218884?text=Hi%20sgdledwall,%20I%20need%20an%20LED%20wall.">WhatsApp</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
+  <!-- Hero -->
   <section>
     <h1>Professional LED Wall Rentals</h1>
-    <p>We provide clean, reliable LED screens for weddings, festivals, concerts and corporate events. Setup, playback and on-site operator included.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="grid cols-3">
-      <div class="card"><b>Weddings</b><p>Reception stage, live feed, photo reels.</p></div>
-      <div class="card"><b>Festivals & Concerts</b><p>Main & side screens, sponsor loops.</p></div>
-      <div class="card"><b>Corporate Events</b><p>Product launches, dealer meets.</p></div>
+    <p>We deliver clean, reliable LED screens for weddings, festivals, concerts and corporate events. Setup, playback and on-site operator included.</p>
+    <div class="grid cols-3" style="margin-top:14px">
+      <div class="card"><b>Indoor / Outdoor</b><p class="muted">Stage backdrops</p></div>
+      <div class="card"><b>Live Feed</b><p class="muted">Cameras & mixers</p></div>
+      <div class="card"><b>Fast Setup</b><p class="muted">Truss & cabling</p></div>
     </div>
   </section>
 
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="grid cols-3">
+      <div class="card"><b>Weddings</b><p>Reception stages, sangeet, live feed, photo reels.</p></div>
+      <div class="card"><b>Festivals & Concerts</b><p>Main stage LED, sponsor loops, countdowns.</p></div>
+      <div class="card"><b>Corporate Events</b><p>Dealer meets, product launches, AGM streams.</p></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
+      <!-- Replace with your LED screen images -->
       <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800" alt="LED wall wedding">
       <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="LED wall concert">
       <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800" alt="LED wall corporate">
@@ -61,22 +90,23 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="grid cols-2">
       <div class="card">
         <b>Pro — Shubham Bhoir</b><br>
-        📞 <a href="tel:+917888218884">+91 78882 18884</a><br>
-        <a class="btn fill" href="https://wa.me/917888218884?text=Hi%20Shubham,%20I%20need%20an%20LED%20wall.">WhatsApp</a>
+        📞 <a href="tel:+917888218884">+91 78882 18884</a><br><br>
+        <a class="btn fill block" href="https://wa.me/917888218884?text=Hi%20Shubham,%20I%20need%20an%20LED%20wall.">WhatsApp Shubham</a>
       </div>
       <div class="card">
         <b>Pro — Omkar Bhoir</b><br>
-        📞 <a href="tel:+918796968651">+91 87969 6851</a><br>
-        <a class="btn fill" href="https://wa.me/918796968651?text=Hi%20Omkar,%20I%20need%20an%20LED%20wall.">WhatsApp</a>
+        📞 <a href="tel:+918796968651">+91 87969 6851</a><br><br>
+        <a class="btn fill block" href="https://wa.me/918796968651?text=Hi%20Omkar,%20I%20need%20an%20LED%20wall.">WhatsApp Omkar</a>
       </div>
     </div>
 
-    <h3 style="margin-top:20px">Quick Quote Form</h3>
+    <h3 style="margin-top:24px">Quick Quote Form</h3>
     <form onsubmit="return sendQuote(event)" class="card">
       <label>Name<input id="name" required></label>
       <label>Phone / WhatsApp<input id="phone" required></label>
@@ -91,7 +121,7 @@
           <option>20×12 ft</option>
         </select>
       </label>
-      <button class="btn fill" type="submit" style="margin-top:12px">Send on WhatsApp</button>
+      <button class="btn fill block" type="submit" style="margin-top:12px">Send on WhatsApp</button>
     </form>
   </section>
 </main>
